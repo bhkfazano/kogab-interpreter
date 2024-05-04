@@ -6,9 +6,13 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
+
+import com.kogab.interpreter.lexer.Lexer;
+import com.kogab.interpreter.lexer.Token;
 
 public class Kogab {
-    static Boolean hadError = false;
+    static boolean hadError = false;
 
     public static void main(String[] args) throws IOException {
         if (args.length > 1) {
@@ -49,7 +53,7 @@ public class Kogab {
         }
     }
 
-    private static void error(int line, String message) {
+    public static void error(int line, String message) {
         report(line, "", message);
     }
 
